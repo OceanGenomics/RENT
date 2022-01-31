@@ -1145,7 +1145,7 @@ class RENT_Classification(RENT_Base):
                         test_data_1 = test_data_split[:, params]
                         print("HEREEEEE 1")
                         model = LogisticRegression(penalty='none',
-                                                   max_iter=20000,
+                                                   max_iter=100000,
                                                    solver="saga",
                                                    random_state=self._random_state).\
                                 fit(train_data_1, train_target)
