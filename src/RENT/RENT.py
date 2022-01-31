@@ -1234,7 +1234,7 @@ class RENT_Classification(RENT_Base):
 
                 if self._classifier == 'logreg':
                     # Trian a logistic regreission model
-                        print("HEREEEEE 2")
+                    print("HEREEEEE 2")
                     model = LogisticRegression(solver='saga',
                                             C=C,
                                             penalty='elasticnet',
@@ -1462,11 +1462,11 @@ class RENT_Classification(RENT_Base):
             train_RENT = self._data.iloc[:, self._sel_var].values
             test_RENT = test_data.iloc[:, self._sel_var].values
         if self._classifier == 'logreg':
-                    print("HEREEEEE 3")
-                    model = LogisticRegression(penalty='none', max_iter=8000,
-                                                solver="saga", \
-                                                random_state=self._random_state).\
-                        fit(train_RENT,self._target)
+            print("HEREEEEE 3")
+            model = LogisticRegression(penalty='none', max_iter=8000,
+                                        solver="saga", \
+                                        random_state=self._random_state).\
+                fit(train_RENT,self._target)
         else:
             print("something")
 
