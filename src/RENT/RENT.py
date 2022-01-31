@@ -1143,7 +1143,7 @@ class RENT_Classification(RENT_Base):
 
                         train_data_1 = train_data[:,params]
                         test_data_1 = test_data_split[:, params]
-
+                        print("HEREEEEE 1")
                         model = LogisticRegression(penalty='none',
                                                    max_iter=8000,
                                                    solver="saga",
@@ -1234,6 +1234,7 @@ class RENT_Classification(RENT_Base):
 
                 if self._classifier == 'logreg':
                     # Trian a logistic regreission model
+                        print("HEREEEEE 2")
                     model = LogisticRegression(solver='saga',
                                             C=C,
                                             penalty='elasticnet',
@@ -1461,6 +1462,7 @@ class RENT_Classification(RENT_Base):
             train_RENT = self._data.iloc[:, self._sel_var].values
             test_RENT = test_data.iloc[:, self._sel_var].values
         if self._classifier == 'logreg':
+                    print("HEREEEEE 3")
                     model = LogisticRegression(penalty='none', max_iter=8000,
                                                 solver="saga", \
                                                 random_state=self._random_state).\
@@ -1491,6 +1493,7 @@ class RENT_Classification(RENT_Base):
                 test_VS1 = test_data.iloc[:, columns].values
             
             if self._classifier == 'logreg':
+                print("HEREEEEE 4")
                 model = LogisticRegression(penalty='none', max_iter=8000,
                                             solver="saga", 
                                             random_state=self._random_state).\
@@ -1519,6 +1522,7 @@ class RENT_Classification(RENT_Base):
             test_VS2 = test_data.iloc[:, self._sel_var].values
 
         if self._classifier == 'logreg':
+            print("HEREEEEE 5")
             model = LogisticRegression(penalty='none', max_iter=8000,
                                         solver="saga", 
                                         random_state=self._random_state ).\
@@ -1686,6 +1690,7 @@ class RENT_Regression(RENT_Base):
                         test_data_split = self._data.iloc[test,:].values
                         test_target = self._target[test]
 
+                    print("HEREEEEE 6")
                     sgd =  ElasticNet(alpha=1/reg, l1_ratio=l1,
                                        max_iter=5000, 
                                        random_state=self._random_state, \
@@ -1790,6 +1795,7 @@ class RENT_Regression(RENT_Base):
                 if self._verbose > 1:
                     print('l1 = ', l1, 'C = ', C, ', TT split = ', K)
 
+                print("HEREEEEE 7")
                 model = ElasticNet(alpha=1/C, l1_ratio=l1,
                                        max_iter=5000, random_state=self._random_state, \
                                        fit_intercept=False).\
