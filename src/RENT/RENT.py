@@ -1239,7 +1239,7 @@ class RENT_Classification(RENT_Base):
                                             penalty='elasticnet',
                                             l1_ratio=l1,
                                             n_jobs=-1,
-                                            max_iter=5000,
+                                            max_iter=10000,
                                             random_state=self._random_state).\
                                             fit(X_train_std, y_train)
                 else:
