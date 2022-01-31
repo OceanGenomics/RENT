@@ -1240,7 +1240,7 @@ class RENT_Classification(RENT_Base):
                                             penalty='elasticnet',
                                             l1_ratio=l1,
                                             n_jobs=-1,
-                                            max_iter=10000,
+                                            max_iter=100000,
                                             random_state=self._random_state).\
                                             fit(X_train_std, y_train)
                 else:
@@ -1463,7 +1463,7 @@ class RENT_Classification(RENT_Base):
             test_RENT = test_data.iloc[:, self._sel_var].values
         if self._classifier == 'logreg':
             print("HEREEEEE 3")
-            model = LogisticRegression(penalty='none', max_iter=8000,
+            model = LogisticRegression(penalty='none', max_iter=100000,
                                         solver="saga", \
                                         random_state=self._random_state).\
                 fit(train_RENT,self._target)
@@ -1494,7 +1494,7 @@ class RENT_Classification(RENT_Base):
             
             if self._classifier == 'logreg':
                 print("HEREEEEE 4")
-                model = LogisticRegression(penalty='none', max_iter=8000,
+                model = LogisticRegression(penalty='none', max_iter=100000,
                                             solver="saga", 
                                             random_state=self._random_state).\
                     fit(train_VS1,self._target)
@@ -1523,7 +1523,7 @@ class RENT_Classification(RENT_Base):
 
         if self._classifier == 'logreg':
             print("HEREEEEE 5")
-            model = LogisticRegression(penalty='none', max_iter=8000,
+            model = LogisticRegression(penalty='none', max_iter=100000,
                                         solver="saga", 
                                         random_state=self._random_state ).\
                     fit(train_VS2, self._target)
@@ -1692,7 +1692,7 @@ class RENT_Regression(RENT_Base):
 
                     print("HEREEEEE 6")
                     sgd =  ElasticNet(alpha=1/reg, l1_ratio=l1,
-                                       max_iter=5000, 
+                                       max_iter=100000, 
                                        random_state=self._random_state, \
                                        fit_intercept=False).\
                                        fit(train_data, train_target)
@@ -1797,7 +1797,7 @@ class RENT_Regression(RENT_Base):
 
                 print("HEREEEEE 7")
                 model = ElasticNet(alpha=1/C, l1_ratio=l1,
-                                       max_iter=5000, random_state=self._random_state, \
+                                       max_iter=100000, random_state=self._random_state, \
                                        fit_intercept=False).\
                                        fit(X_train_std, y_train)
 
